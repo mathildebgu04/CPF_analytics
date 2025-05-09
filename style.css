@@ -1,0 +1,201 @@
+/* Réinitialisation de base et configuration globale */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    /* margin: 0; retiré car déjà dans * */
+    padding: 0; /* Le padding de 20px sera sur .container ou des éléments spécifiques */
+    background-color: #F8F9FA; /* Fond gris très clair */
+    color: #212529; /* Texte principal noir */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto; /* Centrer le contenu */
+    padding: 20px; /* Espacement intérieur */
+}
+
+/* En-tête et Navigation */
+header {
+    background-color: #FFFFFF; /* Fond blanc pour la barre de nav si besoin de la distinguer */
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    /* padding: 0; retiré car déjà dans * */
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007BFF; /* Bleu standard pour les liens */
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a:focus { /* Ajout de :focus pour l'accessibilité */
+    text-decoration: underline;
+    color: #0056b3; /* Bleu plus foncé au survol */
+}
+
+/* Titres */
+h1, h2, h3 {
+    color: #212529; /* Couleur des titres */
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.2em;
+    border-bottom: 2px solid #007BFF; /* Soulignement léger pour le titre principal */
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+/* Paragraphes et liens généraux */
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #007BFF; /* Couleur des liens par défaut */
+}
+a:hover, a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Boutons */
+button,
+input[type="button"] { /* S'assurer que les inputs de type bouton sont aussi stylés */
+    background-color: #007BFF; /* Bleu standard */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 0; /* Marge en haut/bas */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Transition douce */
+}
+
+button:hover,
+input[type="button"]:hover,
+button:focus,
+input[type="button"]:focus {
+    background-color: #0056b3; /* Bleu plus foncé */
+    outline: none; /* Peut être personnalisé si besoin pour l'accessibilité */
+}
+
+/* Styles spécifiques pour les ID et classes */
+#ctaAccueilBouton {
+    background-color: #28a745; /* Vert pour un CTA principal */
+    font-weight: bold;
+}
+#ctaAccueilBouton:hover,
+#ctaAccueilBouton:focus {
+    background-color: #1e7e34; /* Vert plus foncé */
+}
+
+#telechargerBrochureLien {
+    display: inline-block; /* Pour que padding et margin s'appliquent bien */
+    background-color: #6c757d; /* Gris neutre */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#telechargerBrochureLien:hover,
+#telechargerBrochureLien:focus {
+    background-color: #545b62; /* Gris plus foncé */
+    text-decoration: none; /* Garder sans soulignement */
+}
+
+/* Styles pour la page Services */
+.service-item {
+    background-color: #FFFFFF;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.service-item h2 {
+    margin-top: 0; /* Le premier h2 dans service-item n'a pas besoin de marge sup */
+    border-bottom: none; /* Pas de soulignement pour les H2 de service */
+    padding-bottom: 0;
+}
+
+
+/* Formulaires */
+form div { /* Ajout pour espacer les groupes label/input */
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px; /* Espacement entre label et champ */
+    font-weight: bold;
+    color: #495057; /* Gris foncé pour les labels */
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    /* margin-top: 5px; retiré, géré par margin-bottom de label */
+    border: 1px solid #ced4da; /* Bordure grise standard */
+    border-radius: 4px;
+    font-size: 1em;
+}
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Effet de focus léger */
+}
+
+form textarea {
+    resize: vertical; /* Permet uniquement le redimensionnement vertical */
+}
+
+#boutonEnvoyerFormulaire {
+    background-color: #17a2b8; /* Cyan pour le bouton d'envoi de formulaire */
+}
+#boutonEnvoyerFormulaire:hover,
+#boutonEnvoyerFormulaire:focus {
+    background-color: #117a8b; /* Cyan plus foncé */
+}
+
+
+/* Pied de page */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #6c757d; /* Gris pour le texte du footer */
+}
